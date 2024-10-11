@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2E2E2E; /* Dark grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scroll bars */
+}
+
+#table {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#dealer {
+    position: absolute;
+    top: 108px;       /* Y-coordinate for the dealer */
+    left: 650px;      /* X-coordinate for the dealer */
+    width: 225px;     /* Dealer image width */
+    height: 204px;    /* Dealer image height */
+    z-index: 1;       /* Ensure the dealer is behind the table */
+}
+
+/* Centered table image */
+#table-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+}
+
+/* General card styling with updated size */
+.card {
+    width: 81px;             /* Width of each card */
+    height: 117px;          /* Height of each card */
+    background-image: url('cards.png'); /* Image for the card textures */
+    background-size: 1053px 587px; /* Size of the entire texture sheet */
+    position: absolute;      /* Position absolute for animation */
+    transition: transform 0.5s ease; /* Smooth animation for card movement */
+    
+    /* Add shadow for the card */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75); /* Shadow to create depth */
+}
+
+/* Card back styling (if needed), also updated */
+.card-back {
+    background-image: url('card_back.png');
+    background-size: cover;
+    width: 81px;
+    height: 117px;
+}
+
+/* Styles for the login button */
+#login-button {
+    position: absolute;
+    top: 20px;               /* 20px from the top */
+    right: 20px;             /* 20px from the right */
+    padding: 10px 20px;     /* Padding around the text */
+    background-color: #5BC0EB; /* Light blue color */
+    color: white;            /* Text color */
+    border: none;           /* No border */
+    border-radius: 25px;    /* Rounded corners */
+    cursor: pointer;         /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Darker blue on hover */
+#login-button:hover {
+    background-color: #2C3E50; /* Darker blue */
+}
+
+/* Styles for the overlay */
+#overlay {
+    position: fixed;         /* Fixed position to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(0.5rem); /* Blurring effect */
+    display: none;          /* Hidden by default */
+    z-index: 1000;         /* Higher z-index to be on top */
+}
+
+/* Styles for the login menu */
+.login-menu {
+    background-color: white; /* White background for the menu */
+    padding: 20px;          /* Padding inside the menu */
+    border-radius: 15px;    /* Rounded corners */
+    width: 300px;           /* Width of the login menu */
+    margin: auto;           /* Center the menu */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Styles for form groups */
+.form-group {
+    margin-bottom: 15px;    /* Space between form elements */
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+    width: 100%;            /* Full width */
+    padding: 10px;         /* Padding */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px;    /* Rounded corners */
+    font-size: 16px;       /* Font size */
+}
+
+/* Gender selection */
+.gender-selection {
+    display: flex;          /* Flexbox for layout */
+    justify-content: space-between; /* Space between icons */
+}
+
+/* Gender icon styles */
+.gender-icon {
+    width: 256px;          /* Icon size */
+    height: 256px;         /* Icon size */
+    border-radius: 10px;   /* Rounded corners */
+    cursor: pointer;        /* Pointer cursor on hover */
+    opacity: 0.75;         /* Semi-transparent */
+    transition: opacity 0.3s; /* Smooth opacity transition */
+}
+
+/* Change opacity on hover */
+.gender-icon:hover {
+    opacity: 1;            /* Full opacity on hover */
+}
+
+/* Continue button */
+#continue-button {
+    background-color: #5BC0EB; /* Light blue color */
+    color: white;            /* Text color */
+    padding: 10px;          /* Padding */
+    border: none;           /* No border */
+    border-radius: 5px;     /* Rounded corners */
+    cursor: pointer;        /* Pointer cursor on hover */
+    width: 100%;            /* Full width */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+/* Darker blue on hover */
+#continue-button:hover {
+    background-color: #2C3E50; /* Darker blue */
+}
+
+/* Error message style */
+#error-message {
+    color: red;             /* Red color for error messages */
+    margin-top: 10px;      /* Space above error message */
+    text-align: center;     /* Center the error message */
+}
+
+/* Existing styles ... */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2E2E2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#table {
+    position: relative;
+    width: 1920px; /* Full screen width */
+    height: 1080px; /* Full screen height */
+}
+
+#table-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensures the image fills the table */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.seat {
+    position: absolute;
+    width: 100px; /* Width of each seat */
+    height: 50px; /* Height of each seat */
+    border-radius: 10px; /* Rounded edges */
+    background-color: grey; /* Default seat color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+
+.profile-icon {
+    width: 96px; /* Adjusted size for profile icon */
+    height: 96px; /* Adjusted size for profile icon */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    color: white;
+    font-size: 1.5em; /* Adjust font size for username and balance */
+    position: absolute; /* Positioning the user info */
+    top: -100px; /* Adjust to position above the seat */
+}
+
+.buy-in-text {
+    font-weight: bold;
+    color: blue;
+}
+
+.seat-icon {
+    width: 64px; /* Size of the lock icon */
+    height: 64px; /* Size of the lock icon */
+}
+
+#action-buttons {
+    position: absolute;
+    top: 50px; /* Adjust according to your layout */
+    left: 20px; /* Adjust according to your layout */
+}
+
+.action-button {
+    border-radius: 25px; /* Round buttons */
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#timer {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
