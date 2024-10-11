@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Image Centered</title>
     <style>
         body {
             margin: 0;
@@ -12,13 +12,14 @@
             justify-content: center;
             align-items: center;
             background-color: #2E2E2E; /* Dark grey */
-            color: white;
-            font-size: 25px;
-            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    TEST
+    <img src="{{ url_for('static', filename='table.png') }}" alt="Table">
 </body>
 </html>
