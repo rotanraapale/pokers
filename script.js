@@ -196,6 +196,25 @@ function validateLogin() {
     }
 }
 
+const socket = io('http://your-server-url:3000'); // Change to your server URL
+
+// Handle login button click
+document.getElementById('login-button').addEventListener('click', function() {
+    const username = document.getElementById('username').value;
+    socket.emit('joinGame', username); // Notify server about new player
+    document.getElementById('overlay').style.display = 'none'; // Hide overlay
+});
+
+// Listen for player list updates
+socket.on('playerList', (players) => {
+    console.log('Current players:', players); // Update your UI as needed
+});
+
+// Handle actions from other players
+socket.on('gameAction', (action) => {
+    console.log('Game action received:', action); // Update game state as needed
+});
+
 // Function to handle buy-in for the seats
 function buyIn(seatIndex) {
     if (hasBoughtIn) return; // Prevent multiple buy-ins
