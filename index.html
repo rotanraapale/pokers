@@ -3,23 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Centered</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #2E2E2E; /* Dark grey */
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>Card Deal Animation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="{{ url_for('static', filename='table.png') }}" alt="Table">
+    <div id="table">
+        <img id="dealer" src="dealer.png" alt="Dealer">
+        <img id="table-image" src="table.png" alt="Table">
+        <!-- Cards will be dynamically added here -->
+    </div>
+
+    <button id="login-button">LOG-IN</button>
+
+    <div id="overlay">
+        <div class="login-menu">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group gender-selection">
+                <img src="male.png" alt="Male" id="male" class="gender-icon">
+                <img src="female.png" alt="Female" id="female" class="gender-icon">
+            </div>
+            <button id="continue-button">CONTINUE</button>
+            <div id="error-message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="action-buttons" style="display: none;">
+        <button id="check-button">Check</button>
+        <button id="raise-button">Raise</button>
+        <button id="fold-button">Fold</button>
+    </div>
+    <div id="timer-display"></div>
 </body>
-</html>
+</html> 
